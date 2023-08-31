@@ -59,7 +59,7 @@ var playerScore = 0;
 var computerScore = 0;
 
 function game() {
-    let result = checkGameResult(computerChoice, lowerPlayerChoice)
+    var result = checkGameResult(computerChoice, lowerPlayerChoice)
     if (result === "Won") {
         playerScore += 1;
     }
@@ -80,44 +80,3 @@ computerChoice = getComputerChoice()
 console.log(game())
 console.log("Player's score: " + playerScore)
 console.log("Computer's score: " + computerScore)
-
-playerChoice = prompt("Make your choice: ")
-computerChoice = getComputerChoice()
-console.log(game())
-console.log("Player's score: " + playerScore)
-console.log("Computer's score: " + computerScore)
-
-playerChoice = prompt("Make your choice: ")
-computerChoice = getComputerChoice()
-console.log(game())
-console.log("Player's score: " + playerScore)
-console.log("Computer's score: " + computerScore)
-
-playerChoice = prompt("Make your choice: ")
-computerChoice = getComputerChoice()
-console.log(game())
-console.log("Player's score: " + playerScore)
-console.log("Computer's score: " + computerScore)
-
-function checkWinner(playerScore, computerScore) {
-    if (playerScore < computerScore) {
-        console.log("Computer won")
-    }
-    if (playerScore > computerScore) {
-        console.log("Player won")
-    }
-    if (playerScore === computerScore) {
-        console.log("Draw")
-    }
-}
-
-checkWinner(playerScore, computerScore)
-
-// console.log(checkGameResult(computerChoice, lowerPlayerChoice)) //
-//    if (rounds <= 5) {
-//   checkGameResult()
-//}
-// else if (playerScore > computerScore) {
-//    console.log(`You won with a score of ${playerScore} - ${computerScore}`)
-//}
- // console.log(playerChoice) //
