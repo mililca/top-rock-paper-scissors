@@ -5,12 +5,10 @@ function getComputerChoice () {
     return computerChoice
 }
 
-let computerChoice = getComputerChoice()
+var computerChoice = getComputerChoice()
 
-// console.log(computerChoice) //
-
-let playerChoice = prompt("Make your choice: ")
-let lowerPlayerChoice = playerChoice.toLowerCase()
+var playerChoice = prompt("Make your choice: ")
+var lowerPlayerChoice = playerChoice.toLowerCase()
 
 function checkPlayerChoice (choice) {
     if (!(choices.includes(lowerPlayerChoice))) {
@@ -22,35 +20,70 @@ checkPlayerChoice(lowerPlayerChoice)
 
 function checkGameResult(computerChoice, lowerPlayerChoice) {
     if (computerChoice === lowerPlayerChoice) {
-        return "It's a draw!"
+        let result = "Draw"
+        return result
     }
     else if (computerChoice === "rock") {
         if (lowerPlayerChoice === "paper") {
-            return "You win! Paper beats rock"
+            let result = "Won"
+            return result
         }
         else if (lowerPlayerChoice === "scissors") {
-            return "You lose! Rock beats scissors"
+            let result = "Lost"
+            return result
         }
     }
     else if (computerChoice === "paper") {
         if (lowerPlayerChoice === "rock") {
-            return "You lose! Paper beats rock"
+            let result = "Lost"
+            return result
         }
         else if (lowerPlayerChoice === "scissors") {
-            return "You win! Scissors beat paper"
+            let result = "Won"
+            return result
         }
     }
     else if (computerChoice === "scissors") {
         if (lowerPlayerChoice === "rock") {
-            return "You win! Rock beats scissors"
+            let result = "Won"
+            return result
         }
         else if (lowerPlayerChoice === "paper") {
-            return "You lose! Scissors beat paper"
+            let result = "Lost"
+            return result
         }
     }
-    
 }
 
-console.log(checkGameResult(computerChoice, lowerPlayerChoice))
+var playerScore = 0;
+var computerScore = 0;
 
+function game() {
+    var result = checkGameResult(computerChoice, lowerPlayerChoice)
+    if (result === "Won") {
+        playerScore += 1;
+    }
+    else if (result === "Lost") {
+        computerScore += 1;
+    }
+    else {
+        return "No points rewarded";
+    }
+
+    playerChoice = prompt("Make your choice: ")
+    computerChoice = getComputerChoice()
+    console.log("Player's score: " + playerScore)
+    console.log("Computer's score: " + computerScore)
+    result = checkGameResult(computerChoice, lowerPlayerChoice)
+} 
+
+console.log(game())
+
+// console.log(checkGameResult(computerChoice, lowerPlayerChoice)) //
+//    if (rounds <= 5) {
+//   checkGameResult()
+//}
+// else if (playerScore > computerScore) {
+//    console.log(`You won with a score of ${playerScore} - ${computerScore}`)
+//}
  // console.log(playerChoice) //
