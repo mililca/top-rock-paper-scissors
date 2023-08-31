@@ -99,6 +99,20 @@ console.log(game())
 console.log("Player's score: " + playerScore)
 console.log("Computer's score: " + computerScore)
 
+function checkWinner(playerScore, computerScore) {
+    if (playerScore < computerScore) {
+        console.log("Computer won")
+    }
+    if (playerScore > computerScore) {
+        console.log("Player won")
+    }
+    if (playerScore === computerScore) {
+        console.log("Draw")
+    }
+}
+
+checkWinner(playerScore, computerScore)
+
 // console.log(checkGameResult(computerChoice, lowerPlayerChoice)) //
 //    if (rounds <= 5) {
 //   checkGameResult()
