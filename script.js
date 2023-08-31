@@ -20,4 +20,37 @@ function checkPlayerChoice (choice) {
 
 checkPlayerChoice(lowerPlayerChoice)
 
+function checkGameResult(computerChoice, lowerPlayerChoice) {
+    if (computerChoice === lowerPlayerChoice) {
+        return "It's a draw!"
+    }
+    else if (computerChoice === "rock") {
+        if (lowerPlayerChoice === "paper") {
+            return "You win! Paper beats rock"
+        }
+        else if (lowerPlayerChoice === "scissors") {
+            return "You lose! Rock beats scissors"
+        }
+    }
+    else if (computerChoice === "paper") {
+        if (lowerPlayerChoice === "rock") {
+            return "You lose! Paper beats rock"
+        }
+        else if (lowerPlayerChoice === "scissors") {
+            return "You win! Scissors beat paper"
+        }
+    }
+    else if (computerChoice === "scissors") {
+        if (lowerPlayerChoice === "rock") {
+            return "You win! Rock beats scissors"
+        }
+        else if (lowerPlayerChoice === "paper") {
+            return "You lose! Scissors beat paper"
+        }
+    }
+    
+}
+
+console.log(checkGameResult(computerChoice, lowerPlayerChoice))
+
  // console.log(playerChoice) //
