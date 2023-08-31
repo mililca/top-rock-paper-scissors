@@ -59,7 +59,7 @@ var playerScore = 0;
 var computerScore = 0;
 
 function game() {
-    var result = checkGameResult(computerChoice, lowerPlayerChoice)
+    let result = checkGameResult(computerChoice, lowerPlayerChoice)
     if (result === "Won") {
         playerScore += 1;
     }
@@ -69,15 +69,35 @@ function game() {
     else {
         return "No points rewarded";
     }
-
-    playerChoice = prompt("Make your choice: ")
-    computerChoice = getComputerChoice()
-    console.log("Player's score: " + playerScore)
-    console.log("Computer's score: " + computerScore)
-    result = checkGameResult(computerChoice, lowerPlayerChoice)
 } 
 
 console.log(game())
+console.log("Player's score: " + playerScore)
+console.log("Computer's score: " + computerScore)
+
+playerChoice = prompt("Make your choice: ")
+computerChoice = getComputerChoice()
+console.log(game())
+console.log("Player's score: " + playerScore)
+console.log("Computer's score: " + computerScore)
+
+playerChoice = prompt("Make your choice: ")
+computerChoice = getComputerChoice()
+console.log(game())
+console.log("Player's score: " + playerScore)
+console.log("Computer's score: " + computerScore)
+
+playerChoice = prompt("Make your choice: ")
+computerChoice = getComputerChoice()
+console.log(game())
+console.log("Player's score: " + playerScore)
+console.log("Computer's score: " + computerScore)
+
+playerChoice = prompt("Make your choice: ")
+computerChoice = getComputerChoice()
+console.log(game())
+console.log("Player's score: " + playerScore)
+console.log("Computer's score: " + computerScore)
 
 // console.log(checkGameResult(computerChoice, lowerPlayerChoice)) //
 //    if (rounds <= 5) {
